@@ -16,4 +16,4 @@
 > [!CAUTION]
 > <div align="justify">La información mostrada en esta aplicación se basa únicamente en el análisis del cromosoma 22, utilizando un subconjunto de las secuencias ATAC-seq correspondientes a las condiciones D0 y D12. Esta selección fue realizada con el propósito de reducir la carga computacional y permitir la ejecución del análisis en equipos con recursos limitados (procesador de 4 núcleos a 2.1 GHz y 8 GB de memoria RAM.), sin comprometer los objetivos didácticos de la aplicación.</div>
 
-<h3 style='text-align: center; font-size: 25px; color: white;'>✨Gracias por tu apoyo✨</h1>
+<h3 align="center"; font-size: 25px; color: white;'>✨Gracias por tu apoyo✨</h1>
