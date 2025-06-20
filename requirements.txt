@@ -1,6 +1,7 @@
-streamlit
-pandas
-plotly-express
+streamlit==1.38.0
+pandas==2.2.2
+plotly==5.24.1
+plotly-express==0.4.1
 pillow
 numpy
 math
