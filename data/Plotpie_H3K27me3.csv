@@ -1,0 +1,14 @@
+Feature,Frequency
+Promoter (<=1kb),5.474389783
+Promoter (1-2kb),7.4336513095
+Promoter (2-3kb),6.2470356965
+Promoter (3-4kb),5.601382818
+Promoter (4-5kb),5.086398347
+5' UTR,0.0074635435
+3' UTR,0.67540678
+1st Exon,0.723913545
+Other Exon,0.459001635
+1st Intron,11.1841130445
+Other Intron,26.529333094
+Downstream (<=300),0.044793793
+Distal Intergenic,30.533116616
