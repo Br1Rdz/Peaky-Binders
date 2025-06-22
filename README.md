@@ -1,12 +1,6 @@
 <h1 align="center"'>🧬 Peaky Binders 🧬</h1>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
-<h1 style='text-align: center; font-family: "Stardos Stencil", serif; font-size: 56px; color: white; letter-spacing: 2px;'>
-           <span style="color:#00FFFF;  letter-spacing: 10px;
-           text-shadow: 4px 4px 10px rgba(255,255,255,0.2),
-                        -4px -4px 10px rgba(0, 0, 0, 0.3);">Peaky</span> 
-            <span style="color:#D3D3D3;  letter-spacing: 10px;
-           text-shadow: 2px 2px 6px rgba(255,255,255,0.2),
-                        -2px -2px 6px rgba(0, 0, 0 ,0.3);">Binders</span>
+<h1 style='text-align: center; font-family: "Stardos Stencil", serif; font-size: 56px; color: white; letter-spacing: 2px;'><span style="color:#00FFFF;  letter-spacing: 10px; text-shadow: 4px 4px 10px rgba(255,255,255,0.2), -4px -4px 10px rgba(0, 0, 0, 0.3);">Peaky</span> <span style="color:#D3D3D3;  letter-spacing: 10px; text-shadow: 2px 2px 6px rgba(255,255,255,0.2), -2px -2px 6px rgba(0, 0, 0 ,0.3);">Binders</span>
 </h1>
 
 > [!NOTE]
