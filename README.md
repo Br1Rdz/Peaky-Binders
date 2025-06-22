@@ -1,4 +1,4 @@
-<h1 align="center"'>🧬 Epigenetica 🧬</h1>
+<h1 align="center"'>🧬 Peaky Binders 🧬</h1>
 
 > [!NOTE]
 > <div align="justify"> Esta aplicación utiliza datos de secuenciación ATAC-seq y ChIP-seq provenientes del estudio:"Dynamic CTCF binding directly mediates interactions among cis-regulatory elements essential for hematopoiesis". Los datos se emplean con fines exclusivamente prácticos, ilustrativos y educativos, con el objetivo de demostrar el valor de la epigenética y ejemplificar el flujo típico de análisis bioinformático en este tipo de estudios. No se persigue ningún uso comercial ni se pretende reemplazar el análisis original del artículo.</div>  
