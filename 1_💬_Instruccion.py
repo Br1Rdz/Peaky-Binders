@@ -38,9 +38,13 @@ logo = "./LOGO.png"
 st.sidebar.image(logo) 
 st.logo("./Informacion.png", icon_image="./info2.png")
 
-st.markdown("<h1 style='text-align: center; color: white;'>Peaky Binders</h1>", unsafe_allow_html=True)
-
-st.markdown("<h4 style='text-align: left; color: white;'>Instrucciones</h4>", unsafe_allow_html=True)
+st.markdown("""
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
+<h1 style='text-align: center; font-family: "Stardos Stencil", serif; font-size: 56px; color: white; letter-spacing: 2px;'>
+Peaky Binders
+</h1>
+<h4 style='text-align: left; color: white;'>Instrucciones</h4>
+""", unsafe_allow_html=True)
 
 # https://github.com/streamlit/streamlit/issues/2338
 
