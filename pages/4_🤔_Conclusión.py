@@ -25,7 +25,6 @@ st.markdown("""
 Conclusión
 </h1>
 """, unsafe_allow_html=True)
-
 # Reproduce pero oculto con CSS
 st.markdown("""
     <style>
@@ -38,7 +37,7 @@ st.audio('data/finish2.mp3', autoplay=True)
 
 st.markdown(
     """
-        <div style="text-align: justify; font-size: 14px;">
+        <div style="text-align: justify; font-family:serif;">
             <ul>
                 <li>
                 De un total de 7,491 y 15,676 picos analizados para las condiciones D0 y D12, respectivamente,
@@ -107,6 +106,7 @@ st.markdown("""
 ✨Gracias por tu apoyo✨
 </h1>
 """, unsafe_allow_html=True)
+
 
 # st.markdown("<h3 style='text-align: center; font-size: 25px; color: white;'>✨Gracias por tu apoyo✨</h3>",
 #              unsafe_allow_html=True)
