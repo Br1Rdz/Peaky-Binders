@@ -51,8 +51,10 @@ st.markdown("""
 #-------------- datos ----------------------
 df_motivos_atac_seq = pd.read_csv('data/tabla_motivos_atac_seq.csv',sep=",").iloc[:10,:5] #mostrar los primeros 10 registros y cuatro columnas
 df_motivos_chip_seq = pd.read_csv('data/tabla_motivos_chip_seq.csv',sep=",").iloc[:10,:5]
-df_atac_seq_annotate_peaks = pd.read_csv('data/plotAnnoPie_atac_seq.csv')
-df_chip_seq_seq_annotate_peaks = pd.read_csv('data/Plotpie_chipseq.csv')
+df_atac_seq_annotate_peaks = pd.read_csv('data/Plotpie_atac_seq.csv')
+df_gata1_annotate_peaks = pd.read_csv('data/Plotpie_GATA1.csv')
+df_h3k27ac_annotate_peaks = pd.read_csv('data/Plotpie_H3K27ac.csv')
+df_h3k27me3_annotate_peaks = pd.read_csv('data/Plotpie_H3K27me3.csv')
 df_ontologia = pd.read_csv('data/ontologia.csv')
 df_volcano = pd.read_csv('data/DiffBind_HSPC_D12_D0_labels.csv')
 
@@ -74,42 +76,64 @@ def grafico_barras_motivos(df):
 
     return st.plotly_chart(fig, use_container_width=True)
 
-def pie_picos_anotados(df_atac_seq, df_chip_seq):
+def pie_picos_anotados(df_atac_seq, df_GATA1,  df_H3K27ac, df_H3K27me3):
     '''Funcion sobre grafico de pie para picos anotados para ATAC-seq y CHIP-seq'''
 
     labels = df_atac_seq['Feature'].tolist()
     valores_ataqseq = df_atac_seq['Frequency'].tolist()
-    valores_chipseq = df_chip_seq['Frequency'].tolist()
+    valores_GATA1 = df_GATA1['Frequency'].tolist()
+    valores_H3K27ac = df_H3K27ac['Frequency'].tolist()
+    valores_H3K27me3 = df_H3K27me3['Frequency'].tolist()
 
-    fig = make_subplots(rows=1, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}]])
-
-    fig.add_trace(go.Pie(labels=labels, 
-                         values = valores_ataqseq, 
-                         name="ATAC-seq"),
-                         row=1, col=1)
-
-    fig.add_trace(go.Pie(labels=labels, 
-                         values = valores_chipseq, 
-                         name="ChIP-seq"),
-                         row=1, col=2)
-
-    fig.update_traces(hole=.4, hoverinfo="label+percent+name")
-
-    fig.update_layout(
-        annotations=[dict(text='ATAC-seq', x=sum(fig.get_subplot(1, 1).x) / 2, y=0.5,
-                        font_size=16, showarrow=False, xanchor="center"),
-                    dict(text='CHIP-seq', x=sum(fig.get_subplot(1, 2).x) / 2, y=0.5,
-                        font_size=16, showarrow=False, xanchor="center")])
+    fig = make_subplots(rows=2, cols=2, specs=[[{'type':'domain'},{'type':'domain'}],
+                                            [{'type':'domain'},{'type':'domain'}]])
     
+    fig.add_trace(go.Pie(labels=labels, 
+                     values = valores_ataqseq, name="ATAC-seq"),
+                        row=1, col=1)
+
+    fig.add_trace(go.Pie(labels=labels,
+                        values = valores_GATA1, name="GATA1"), 
+                        row=1, col=2)
+
+    fig.add_trace(go.Pie(labels=labels, 
+                        values = valores_H3K27ac, name="H3K27ac"), 
+                         row=2, col=1)
+
+    fig.add_trace(go.Pie(labels=labels, 
+                        values = valores_H3K27me3, name="H3K27me3"),
+                         row=2, col=2)
+
+    # fig.update_traces(hole=.4, hoverinfo="label+percent+name")
+    fig.update_traces(hole=.4, textposition='inside')
+
     fig.update_layout(
-        title={
-            'text': 'Anotacion de picos ATAC-seq vs CHIP-seq',
-            'x': 0.5,
-            'xanchor': 'center'
-        }
-    )
-    fig.update_layout(height=400, width=1000, showlegend=True)
+    # title_text="Anotacion de picos",
+    # Add annotations in the center of the donut pies.
+    annotations=[dict(text='ATAC-seq', x=sum(fig.get_subplot(1, 1).x) / 2, y=0.8,
+                      font_size=20, showarrow=False, xanchor="center"),
+                 
+                 dict(text='GATA1', x=sum(fig.get_subplot(1, 2).x) / 2, y=0.8,
+                      font_size=20, showarrow=False, xanchor="center"),
+                 
+                 dict(text='H3K27ac', x=sum(fig.get_subplot(2, 1).x) / 2, y=0.20,
+                      font_size=20, showarrow=False, xanchor="center"),
+                 
+                 dict(text='H3K27me3', x=sum(fig.get_subplot(2, 2).x) / 2, y=0.20,
+                      font_size=20, showarrow=False, xanchor="center")])
+    
+    # fig.update_layout(
+    #     title={
+    #         'text': 'Anotacion de picos',
+    #         'x': 0.5,
+    #         'xanchor': 'center'
+    #     }
+    # )
+
+    fig.update_layout(showlegend=True)
     fig.update_traces(sort=False)
+    fig.update_layout(uniformtext_minsize=15, uniformtext_mode='hide')
+    fig.update_layout(height=1000, width=1000)
     return st.plotly_chart(fig)
 
 def ontologia_bar(df):
@@ -123,11 +147,11 @@ def ontologia_bar(df):
             title="Clúster de ontología enriquecido")  
            
     fig.update_layout(
-            title={
-                'text': 'Ontologia genica',
-                'x': 0.5,
-                'xanchor': 'center'
-            }, showlegend=False
+    #         title={
+    #             'text': 'Ontologia genica',
+    #             'x': 0.5,
+    #             'xanchor': 'center'},
+             showlegend=False
         )
     return st.plotly_chart(fig, use_container_width=True)
 
@@ -138,8 +162,10 @@ def volcano_plot(df):
     df.loc[(df['Fold'] > 1.5) & (df['FDR'] < 0.05), 'State'] = 'Gained'
     df.loc[(df['Fold'] < -1.5) & (df['FDR'] < 0.05), 'State'] = 'Reduced'
     df['-log10(FDR)'] = -np.log10(df['FDR'])
-    df.loc[(df['Name']=='ATAC_seq31')|(df['Name'] == 'ATAC_seq30')|(df['Name'] == 'ATAC_seq2')
-           |(df['Name'] == 'ATAC_seq177'), 'State'] = 'Validated' 
+    df.loc[(df['Name']=='ATAC_seq463') | (df['Name'] == 'ATAC_seq31') | (df['Name'] == 'ATAC_seq2') |
+           (df['Name'] == 'ATAC_seq5') | (df['Name']=='ATAC_seq30') | (df['Name']=='ATAC_seq1346')  |
+           (df['Name']=='ATAC_seq1192') | (df['Name']=='ATAC_seq750') | (df['Name']=='ATAC_seq880') |
+           (df['Name']=='ATAC_seq177'), 'State'] = 'Validated' 
     
     #Grafico
     fig =  px.scatter(df, 'Fold', '-log10(FDR)',
@@ -185,7 +211,7 @@ with st.expander("*Fig.1.* :red[Mapa de calor entre D0 y D12 para ATAC-seq]"):
     ) 
     st.image('data/heatmap.png', use_column_width=True)
 
-with st.expander("*Fig.2.* :green[Anotacion de picos ATAC-seq vs CHIP-seq]"):
+with st.expander("*Fig.2.* :green[Anotacion de picos]"):
     st.markdown(
     """
     <div style="text-align: justify; font-family:serif; font-size: 14px;">Los gráficos de anotación de picos (Peak Annotation) muestra la distribución de los picos detectados
@@ -195,23 +221,26 @@ with st.expander("*Fig.2.* :green[Anotacion de picos ATAC-seq vs CHIP-seq]"):
     </div>
     """, unsafe_allow_html=True
     ) 
+#Centrar grafico
+    left, middle, right = st.columns((2, 5, 2))
+    with middle:
+        pie_picos_anotados(df_atac_seq_annotate_peaks, df_gata1_annotate_peaks,
+                        df_h3k27ac_annotate_peaks, df_h3k27me3_annotate_peaks)
 
-    pie_picos_anotados(df_atac_seq_annotate_peaks, df_chip_seq_seq_annotate_peaks)
-
-with st.expander("*Fig.3.* :rainbow[Análisis de Motivos para ATAC-seq y CHIP-seq]"):
+with st.expander("*Fig.3.* :rainbow[Análisis de Motivos]"):
     st.markdown(
     """
     <div style="text-align: justify; font-family:serif; font-size: 14px;">El gráfico muestra los <span style="color:orange;">10 principales factores de transcripción (FT)</span> potencialmente asociados con la regulación,
-                 basándose en el enriquecimiento de secuencias específicas en las regiones analizadas mediante <span style="color:#e74c3c;">ATAC-seq</span> y <span style="color:#42c106;">ChIP-seq</span>.
+                 basándose en el enriquecimiento de secuencias específicas en las regiones analizadas mediante <span style="color:#e74c3c;">ATAC-seq</span>.
                  Los resultados indican que los factores del linaje <span style="color:#FF00FF;">GATA</span> podrían tener el mayor aporte en la regulación.
     </div>
     """, unsafe_allow_html=True
     )
     
-    st.markdown("<h1 style='text-align: center; color: white;font-size:20px;'>Análisis de motivo para ATAC-seq</h1>", unsafe_allow_html=True)
+    # st.markdown("<h1 style='text-align: center; color: white;font-size:20px;'>Análisis de motivo para ATAC-seq</h1>", unsafe_allow_html=True)
     grafico_barras_motivos(df_motivos_atac_seq)
-    st.markdown("<h1 style='text-align: center; color: white;font-size:20px;'>Análisis de motivo para CHIP-seq</h1>", unsafe_allow_html=True)
-    grafico_barras_motivos(df_motivos_chip_seq)
+    # st.markdown("<h1 style='text-align: center; color: white;font-size:20px;'>Análisis de motivo para CHIP-seq</h1>", unsafe_allow_html=True)
+    # grafico_barras_motivos(df_motivos_chip_seq)
     st.markdown("Un valor mayor de :green[-Log P-value = más significativo.]")
 
 # https://stackoverflow.com/questions/71988099/markdown-multiline-link-support
@@ -237,8 +266,8 @@ with st.expander("*Fig.5.* :blue[Volcano]:red[Plot]"):
                 usando datos de <span style="color:#f20a1d;">ATAC-seq</span>. En el eje X se muestra el <span style="color:orange;">cambio en la accesibilidad</span> (<em>Fold Change</em>) entre las dos condiciones,
                 y en el eje Y se muestra la <span style="color:orange;">importancia estadística</span> de ese cambio (<em>–log10 del FDR</em>, que es la tasa de falsos descubrimientos).
                 Así, los puntos situados más alejados del centro en el eje x y con mayor altura en el eje y representan
-                regiones con grandes cambios en su expresión y alta significancia estadística. Entre ellos, los puntos verdes destacan
-                aquellas regiones que además fueron validadas experimentalmente mediante <span style="color:#42c106;">ChIP-seq</span>, lo que refuerza su relevancia biológica.
+                regiones con grandes cambios en su expresión y alta significancia estadística. Los puntos <span style="color:#42c106;">verdes</span> son picos 
+                asociados a genes con funcionalidad del síndrome por variación en el número de copias 22q11.2.
     </div>
     """, unsafe_allow_html=True
     )
@@ -264,12 +293,9 @@ with st.container(border=True):
 
     st.markdown('''<div style="text-align: justify; font-family:serif; font-size: 12px;">
             <li>
-            Genes con regiones accesibles a la cromatina (<span style="color:#e74c3c;">ATAC-seq</span>):
+            Genes asociados con funcionalidad del síndrome por variación en el número de copias 22q11.2 : 
             <span style="color:orange;"><em>SREBF2, DEPDC5, RBX1, TXNRD2, MED15, TANGO2 y TXN2</em></span>
             </li>
-            <li>
-            Genes con regiones compartidas entre <span style="color:#e74c3c;">ATAC-seq</span> y <span style="color:#42c106;">CHIP-seq</span>:
-            <span style="color:orange;"><em>RBX1, TXNRD2, TANGO2 y TXN2</span></em>
             </div>
             <br>''',
             unsafe_allow_html=True) 
@@ -332,24 +358,14 @@ with st.container(border=True):
                     indexURL: "https://raw.githubusercontent.com/Br1Rdz/Epigenetica/ce4e706f49c4a659fcaee68a6b08b53eada42e7d/data/incrementados_atac_sorted_peaks.bed.gz.tbi",
                     displayMode: "EXPANDED",
                     color: "rgb(231, 76, 60)"
-            },
-            {
-                    name: "ChIP-seq Peaks",
-                    type: "annotation",
-                    format: "bedtabix",
-                    url: "https://raw.githubusercontent.com/Br1Rdz/Epigenetica/ce4e706f49c4a659fcaee68a6b08b53eada42e7d/data/incrementados_chipseq_sorted_peaks.bed.gz",
-                    indexURL: "https://raw.githubusercontent.com/Br1Rdz/Epigenetica/ce4e706f49c4a659fcaee68a6b08b53eada42e7d/data/incrementados_chipseq_sorted_peaks.bed.gz.tbi",
-                    displayMode: "EXPANDED",
-                    color: "rgb(66, 193, 6)"
             }
-            
             ]
         };
         igv.createBrowser(igvDiv, options);
     </script>
     """
 
-    components.html(html_string, height=700) 
+    components.html(html_string, height=550) 
 
 #----------------- cita ----------------------------
     # https://discuss.streamlit.io/t/change-font-size-in-st-write/7606/2
