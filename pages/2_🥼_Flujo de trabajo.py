@@ -21,7 +21,7 @@ st.logo("./Informacion.png", icon_image="./info2.png")
 st.markdown("""
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
 <h1 style='text-align: center; font-family: "Stardos Stencil", serif; font-size: 56px; color: white; letter-spacing: 2px;'>
-Resultados
+Flujo de trabajo
 </h1>
 """, unsafe_allow_html=True)
 
