@@ -29,12 +29,20 @@ hide_st_style = '''
 st.markdown(hide_st_style, unsafe_allow_html= True)
 st.logo("./Informacion.png", icon_image="./info2.png")
 
-# st.markdown("<h1 style='text-align: center; color: white;'>Resultados</h1>", unsafe_allow_html=True)
+# st.markdown("<h1 style='text-align: center; color: white;'>Resultados</h1>",
+#              unsafe_allow_html=True)
+# st.markdown("""
+# <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
+# <h1 style='text-align: center; font-family: "Stardos Stencil", sans-serif; font-size: 56px; color: white; letter-spacing: 2px;'>
+# Resultados
+# </h1>
+# """, unsafe_allow_html=True)
 
 st.markdown("""
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
-<h1 style='text-align: center; font-family: "Stardos Stencil", serif; font-size: 56px; color: white; letter-spacing: 2px;'>
-Resultados
+<link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+
+<h1 style='font-family: "Ultra", sans-serif; text-align: center; font-size: 56px; color: #D3D3D3;'>
+  Resultados
 </h1>
 """, unsafe_allow_html=True)
 
@@ -206,7 +214,7 @@ def volcano_plot(df):
 with st.expander("*Fig.1.* :red[Mapa de calor entre D0 y D12 para ATAC-seq]"):
     st.markdown(
     """
-    <div style="text-align: justify; font-family:serif; font-size: 14px;"> El mapa de calor indica mediante colores la cantidad de señal (conteos normalizados)
+    <div style="text-align: justify; font-family:sans-serif; font-size: 14px;"> El mapa de calor indica mediante colores la cantidad de señal (conteos normalizados)
         en una ventana de ±1000 pb alrededor del TSS (<em>Transcription Start Site</em>, por sus siglas en inglés), que es el centro.
         <span style="color:orange;">Cuanto más rojo, mayor es la señal; cuanto más amarillo, menor</span>.
         En la condición <span style="color:orange;">D12</span> se observa un aumento de la señal en los picos, lo que sugiere una <span style="color:#55ee0f;">mayor accesibilidad
@@ -221,7 +229,7 @@ with st.expander("*Fig.1.* :red[Mapa de calor entre D0 y D12 para ATAC-seq]"):
 with st.expander("*Fig.2.* :green[Anotacion de picos]"):
     st.markdown(
     """
-    <div style="text-align: justify; font-family:serif; font-size: 14px;">Los gráficos de anotación de picos (Peak Annotation) muestra la distribución de los picos detectados
+    <div style="text-align: justify; font-family:sans-serif; font-size: 14px;">Los gráficos de anotación de picos (Peak Annotation) muestra la distribución de los picos detectados
               en relación con diferentes regiones genómicas, <span style="color:orange;">como promotores, exones, intrones o regiones intergénicas para el Cromosoma 22</span>.
               Esta información permite identificar en qué partes del cromosoma 22 se encuentran los picos,
               lo cual es útil para entender su posible función reguladora.
@@ -237,7 +245,7 @@ with st.expander("*Fig.2.* :green[Anotacion de picos]"):
 with st.expander("*Fig.3.* :rainbow[Análisis de Motivos]"):
     st.markdown(
     """
-    <div style="text-align: justify; font-family:serif; font-size: 14px;">El gráfico muestra los <span style="color:orange;">10 principales factores de transcripción (FT)</span> potencialmente asociados con la regulación,
+    <div style="text-align: justify; font-family:sans-serif; font-size: 14px;">El gráfico muestra los <span style="color:orange;">10 principales factores de transcripción (FT)</span> potencialmente asociados con la regulación,
                  basándose en el enriquecimiento de secuencias específicas en las regiones analizadas mediante <span style="color:#e74c3c;">ATAC-seq</span>.
                  Los resultados indican que los factores del linaje <span style="color:#FF00FF;">GATA</span> podrían tener el mayor aporte en la regulación.
     </div>
@@ -255,7 +263,7 @@ with st.expander("*Fig.4.* :orange[Grafico de ontología génica (Gene Ontology,
     # url = "https://rarediseases.org/es/rare-diseases/chromosome-22q11-2-deletion-syndrome/"
     st.markdown(
     """
-    <div style="text-align: justify; font-family:serif; font-size: 14px;">El análisis de <span style="color:#55ee0f;">ontología genética (GO, por sus siglas en inglés)</span>
+    <div style="text-align: justify; font-family:sans-serif; font-size: 14px;">El análisis de <span style="color:#55ee0f;">ontología genética (GO, por sus siglas en inglés)</span>
                 se utiliza para comprender cómo los elementos reguladores del genoma (por ejemplo, <span style="color:red;">regiones promotoras y enhancers</span>)
                 se relacionan con conjuntos de genes que desempeñan funciones biológicas específicas.
                 Se identificaron los siguientes genes: <span style="color:orange;">SREBF2, DEPDC5, RBX1, TXNRD2, MED15, TANGO2 y TXN2</span>,
@@ -269,7 +277,7 @@ with st.expander("*Fig.4.* :orange[Grafico de ontología génica (Gene Ontology,
 with st.expander("*Fig.5.* :blue[Volcano]:red[Plot]"):
     st.markdown(
     """
-    <div style="text-align: justify; font-family:serif; font-size: 14px;">El gráfico muestra los resultados de cambios en la accesibilidad de la cromatina entre las condiciones D0 y D12
+    <div style="text-align: justify; font-family:sans-serif; font-size: 14px;">El gráfico muestra los resultados de cambios en la accesibilidad de la cromatina entre las condiciones D0 y D12
                 usando datos de <span style="color:#f20a1d;">ATAC-seq</span>. En el eje X se muestra el <span style="color:orange;">cambio en la accesibilidad</span> (<em>Fold Change</em>) entre las dos condiciones,
                 y en el eje Y se muestra la <span style="color:orange;">importancia estadística</span> de ese cambio (<em>–log10 del FDR</em>, que es la tasa de falsos descubrimientos).
                 Así, los puntos situados más alejados del centro en el eje x y con mayor altura en el eje y representan
@@ -284,13 +292,13 @@ with st.expander("*Fig.5.* :blue[Volcano]:red[Plot]"):
 #----------------------- IGV -------------------------------------
 with st.container(border=True):
     # https://discuss.streamlit.io/t/how-do-i-align-st-title/1668/4    
-    st.markdown("<h1 style='text-align: center; color: white;'>🧬Gráfico de señales🧬</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; font-family:sans-serif; color: white; font-size:32px;'>🧬Gráfico de señales🧬</h1>", unsafe_allow_html=True)
 
     _left, mid, _right = st.columns(3)
 
     with mid :
         st.image('data/ejemplo.png')
-        st.markdown('''<div style="text-align:center; font-family:serif; font-size:12px;"><em>Instrucción: Coloca aqui el nombre del gen y presiona "enter"</em></div>
+        st.markdown('''<div style="text-align:center; font-family:sans-serif; font-size:12px;"><em>Instrucción: Coloca aqui el nombre del gen y presiona "enter"</em></div>
                     <br>''',
                     unsafe_allow_html= True)
 
@@ -298,11 +306,9 @@ with st.container(border=True):
 #             :red[SREBF2, DEPDC5, RBX1, TXNRD2, MED15, TANGO2 y TXN2]''')
 
 
-    st.markdown('''<div style="text-align: justify; font-family:serif; font-size: 12px;">
-            <li>
+    st.markdown('''<div style="text-align: justify; font-family:sans-serif; font-size: 14px;">
             Genes asociados con funcionalidad del síndrome por variación en el número de copias 22q11.2 : 
             <span style="color:orange;"><em>SREBF2, DEPDC5, RBX1, TXNRD2, MED15, TANGO2 y TXN2</em></span>
-            </li>
             </div>
             <br>''',
             unsafe_allow_html=True) 
@@ -378,9 +384,9 @@ with st.container(border=True):
     # https://discuss.streamlit.io/t/change-font-size-in-st-write/7606/2
     # st.markdown('<p class="medium-font">Integrative Genomics Viewer (IGV):</p>', unsafe_allow_html=True)
     # st.markdown('<p class="small-font">James T Robinson, Helga Thorvaldsdottir, Douglass Turner, Jill P Mesirov, igv.js: an embeddable JavaScript implementation of the Integrative Genomics Viewer (IGV), Bioinformatics, Volume 39, Issue 1, January 2023, btac830</p>', unsafe_allow_html=True)
-    st.markdown('<div style="text-align: justify; font-family:serif; font-size: 12px;"><em>Integrative Genomics Viewer (IGV)</em>:</div>',
+    st.markdown('<div style="text-align: justify; font-family:sans-serif; font-size: 12px;"><em>Integrative Genomics Viewer (IGV)</em>:</div>',
                  unsafe_allow_html=True)
-    st.markdown('''<div style="text-align: justify; font-family:serif; font-size: 10px;">
+    st.markdown('''<div style="text-align: justify; font-family:sans-serif; font-size: 10px;">
     James T Robinson, Helga Thorvaldsdottir, Douglass Turner, Jill P Mesirov, igv.js: an embeddable JavaScript
     implementation of the Integrative Genomics Viewer (IGV), Bioinformatics, Volume 39, Issue 1, January 2023.
     </div>''', unsafe_allow_html=True) 

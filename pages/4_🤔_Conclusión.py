@@ -19,12 +19,21 @@ st.markdown(hide_st_style, unsafe_allow_html= True)
 st.logo("./Informacion.png", icon_image="./info2.png")
 
 # st.markdown("<h1 style='text-align: center; color: white;'>Conclusión</h1>", unsafe_allow_html=True)
+# st.markdown("""
+# <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
+# <h1 style='text-align: center; font-family: "Stardos Stencil", sans-serif; font-size: 56px; color: white; letter-spacing: 2px;'>
+# Conclusión
+# </h1>
+# """, unsafe_allow_html=True)
+
 st.markdown("""
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
-<h1 style='text-align: center; font-family: "Stardos Stencil", serif; font-size: 56px; color: white; letter-spacing: 2px;'>
-Conclusión
+<link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+
+<h1 style='font-family: "Ultra", sans-serif; text-align: center; font-size: 56px; color: #D3D3D3;'>
+  Conclusión
 </h1>
 """, unsafe_allow_html=True)
+
 # Reproduce pero oculto con CSS
 st.markdown("""
     <style>
@@ -37,7 +46,7 @@ st.audio('data/finish2.mp3', autoplay=True)
 
 st.markdown(
     """
-        <div style="text-align: justify; font-family:serif;">
+        <div style="text-align: justify; font-family:sans-serif;">
             <ul>
                 <li>
                 De un total de 7,491 y 15,676 picos analizados para las condiciones D0 y D12, respectivamente,
@@ -100,13 +109,19 @@ st.markdown(
     """, unsafe_allow_html=True
 )
 
+# st.markdown("""
+# <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
+# <h1 style='text-align: center; font-family: "Stardos Stencil", sans-serif; font-size: 20px; color: white; letter-spacing: 2px;'>
+# ✨Gracias por tu apoyo✨
+# </h1>
+# """, unsafe_allow_html=True)
+
 st.markdown("""
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
-<h1 style='text-align: center; font-family: "Stardos Stencil", serif; font-size: 20px; color: white; letter-spacing: 2px;'>
-✨Gracias por tu apoyo✨
+<link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+<h1 style='font-family: "Ultra", serif; text-align: center; font-size: 20px; color:#D3D3D3;'>
+  ✨Gracias por tu apoyo✨
 </h1>
 """, unsafe_allow_html=True)
-
 
 # st.markdown("<h3 style='text-align: center; font-size: 25px; color: white;'>✨Gracias por tu apoyo✨</h3>",
 #              unsafe_allow_html=True)
