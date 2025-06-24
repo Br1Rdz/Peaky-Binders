@@ -41,6 +41,7 @@ st.logo("./Informacion.png", icon_image="./info2.png")
 # st.markdown("<h1 style='text-align: center; color: white;'>Peaky Binders</h1>", unsafe_allow_html=True)
 st.markdown("""
 <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
 
 <h1 style='font-family: "Ultra", serif; text-align: center; font-size: 56px; color: #2D2D2D;'>
              <span style="color:#00FFFF;  letter-spacing: 10px;
@@ -50,7 +51,12 @@ st.markdown("""
            text-shadow: 2px 2px 6px rgba(255,255,255,0.2),
                         -2px -2px 6px rgba(0, 0, 0 ,0.3);">Binders</span>
 </h1>
-<h4 style='text-align: left; color: white; font-family: sans-serif;'>Instrucciones</h4>
+<h5 style='text-align: center; font-family: "Cinzel", sans-serif; color: #D3D3D3;'>
+   Por obra de los malditos genes marcados
+</h5> 
+<h4 style='text-align: left; color: white; font-family: sans-serif;'>
+  Instrucciones
+</h4>
 """, unsafe_allow_html=True)
 
 # st.markdown("""
