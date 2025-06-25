@@ -33,5 +33,5 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # st.markdown("<h1 style='text-align: center; color: white;'>Flujo de trabajo</h1>", unsafe_allow_html=True)
-
-st.image("data/Diagrama.png", use_column_width=True)
+with st.container(border=True):
+  st.image("data/Flujo_trabajo.png", use_column_width=True)
