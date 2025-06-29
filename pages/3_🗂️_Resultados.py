@@ -327,7 +327,7 @@ with st.container(border=True):
                     name: "Dia 0",
                     type: "wig",
                     format: "bigwig",
-                    url: "https://raw.githubusercontent.com/Br1Rdz/Epigenetica/ce4e706f49c4a659fcaee68a6b08b53eada42e7d/data/day0_ATAC.bw",
+                    url: "https://raw.githubusercontent.com/Br1Rdz/Peaky-Binders/a7b5a4fe05c31340377479147c9ad43670f2f0fb/data/day0_ATAC.bw",
                     autoscale: true,
                     color: "rgb(100, 100, 100)"
             },
@@ -335,7 +335,7 @@ with st.container(border=True):
                     name: "Dia 12",
                     type: "wig",
                     format: "bigwig",
-                    url: "https://raw.githubusercontent.com/Br1Rdz/Epigenetica/6fe7d1a9950b89587a251c4c3dc1f07c82c01e8d/data/day12_ATAC.bw",
+                    url: "https://raw.githubusercontent.com/Br1Rdz/Peaky-Binders/a7b5a4fe05c31340377479147c9ad43670f2f0fb/data/day12_ATAC.bw",
                     autoscale: true,
                     color: "rgb(0, 0, 200)"
             },
@@ -343,7 +343,7 @@ with st.container(border=True):
                     name: "GATA1",
                     type: "wig",
                     format: "bigwig",
-                    url: "https://raw.githubusercontent.com/Br1Rdz/Epigenetica/6fe7d1a9950b89587a251c4c3dc1f07c82c01e8d/data/GATA1.bw",
+                    url: "https://raw.githubusercontent.com/Br1Rdz/Peaky-Binders/a7b5a4fe05c31340377479147c9ad43670f2f0fb/data/GATA1.bw",
                     autoscale: true,
                     color: "rgb(0, 0, 200)"
             },
@@ -351,7 +351,7 @@ with st.container(border=True):
                     name: "H3K27ac",
                     type: "wig",
                     format: "bigwig",
-                    url: "https://raw.githubusercontent.com/Br1Rdz/Epigenetica/e43dda79d6d16d846685c177a33816dd5adcb53c/data/H3K27ac.bw",
+                    url: "https://raw.githubusercontent.com/Br1Rdz/Peaky-Binders/a7b5a4fe05c31340377479147c9ad43670f2f0fb/data/H3K27ac.bw",
                     autoscale: true,
                     color: "rgb(0, 0, 200)"
             },
@@ -359,7 +359,7 @@ with st.container(border=True):
                     name: "H3K27me3",
                     type: "wig",
                     format: "bigwig",
-                    url: "https://raw.githubusercontent.com/Br1Rdz/Epigenetica/e43dda79d6d16d846685c177a33816dd5adcb53c/data/H3K27me3.bw",
+                    url: "https://raw.githubusercontent.com/Br1Rdz/Peaky-Binders/a7b5a4fe05c31340377479147c9ad43670f2f0fb/data/H3K27me3.bw",
                     autoscale: true,
                     color: "rgb(100, 100, 100)"
             },
@@ -367,8 +367,8 @@ with st.container(border=True):
                     name: "ATAC-seq Peaks",
                     type: "annotation",
                     format: "bedtabix", 
-                    url: "https://raw.githubusercontent.com/Br1Rdz/Epigenetica/ce4e706f49c4a659fcaee68a6b08b53eada42e7d/data/incrementados_atac_sorted_peaks.bed.gz",
-                    indexURL: "https://raw.githubusercontent.com/Br1Rdz/Epigenetica/ce4e706f49c4a659fcaee68a6b08b53eada42e7d/data/incrementados_atac_sorted_peaks.bed.gz.tbi",
+                    url: "https://raw.githubusercontent.com/Br1Rdz/Peaky-Binders/a7b5a4fe05c31340377479147c9ad43670f2f0fb/data/incrementados_atac_sorted_peaks.bed.gz",
+                    indexURL: "https://raw.githubusercontent.com/Br1Rdz/Peaky-Binders/a7b5a4fe05c31340377479147c9ad43670f2f0fb/data/incrementados_atac_sorted_peaks.bed.gz.tbi",
                     displayMode: "EXPANDED",
                     color: "rgb(231, 76, 60)"
             }
