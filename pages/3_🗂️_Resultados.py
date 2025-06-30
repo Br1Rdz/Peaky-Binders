@@ -307,7 +307,9 @@ with st.container(border=True):
 
 
     st.markdown('''<div style="text-align: justify; font-family:sans-serif; font-size: 14px;">
-            Genes asociados con funcionalidad del síndrome por variación en el número de copias 22q11.2 : 
+            El gráfico de señales muestra las regiones donde la cromatina esta accesible (ATAC-seq) o donde se unen proteínas específicas como factores de transcripción o histonas modificadas (CHIP-seq).
+            <br>
+            Los siguientes genes estan asociados con funcionalidad del síndrome por variación en el número de copias 22q11.2: 
             <span style="color:orange;"><em>SREBF2, DEPDC5, RBX1, TXNRD2, MED15, TANGO2 y TXN2</em></span>
             </div>
             <br>''',
