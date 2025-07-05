@@ -219,7 +219,7 @@ with st.expander("*Fig.1.* :red[Mapa de calor entre D0 y D12 para ATAC-seq]"):
         <span style="color:orange;">Cuanto más rojo, mayor es la señal; cuanto más amarillo, menor</span>.
         En la condición <span style="color:orange;">D12</span> se observa un aumento de la señal en los picos, lo que sugiere una <span style="color:#55ee0f;">mayor accesibilidad
         a la cromatina</span>. En cambio, los picos conservados y reducidos en <span style="color:orange;">D0</span> 
-        tienden a mostrar una <span style="color:#f20a1d;">menor señal</span>.
+        tienden a mostrar una <span style="color:#55ee0f;">mayor señal</span>.
     </div>
     <br>
     """, unsafe_allow_html=True
